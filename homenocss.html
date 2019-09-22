@@ -8,25 +8,35 @@
     <title>Masuk - Koersoes</title>
     <link rel="stylesheet" href="css/koersoes.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<style>
-.content {
-    width: 700px;
-    height: 600px;
-    top: 53%;
-    left: 50%;
-    position: absolute;
-    /* margin-top: -200px;
+    <style>
+        .content {
+            width: 100%;
+            height: 800px;
+            top: 65%;
+            left: 50%;
+            position: absolute;
+            /* margin-top: -200px;
     margin-left: -250px; */
-    transform: translate(-50%, -50%);
-    background: #fff;
-    box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.06);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-radius: 5px;
-}
+            transform: translate(-50%, -50%);
+            background: #fff;
+            box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.06);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
 
-</style>
+        .video {
+            margin: auto;
+            display: contents;
+            left: 10%;
+        }
+
+        .list-kursus {
+            float: right;
+            height: 400px;
+            width: 40%;
+            display: inline;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,11 +52,12 @@
             </div>
             <div class="menu">
                 <ul>
-                    <button class="register">DAFTAR</button>
-                    <button class="login">MASUK</button>
+                    <li class="menu-item"><a href="#">MY ACCOUNT <i class="fa fa-angle-down"></i></a></li>
+                    <!-- <button class="register">DAFTAR</button>
+                    <button class="login">MASUK</button> -->
                     <li class="menu-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    <li class="menu-item"><a href="#">MULAI MENGAJAR</a></li>
-                    <li class="menu-item"><a href="#">BISNIS</a></li>
+                    <li class="menu-item"><a href="#">KURSUS SAYA</a></li>
+                    <li class="menu-item"><a href="#">DASHBOARD</a></li>
                 </ul>
             </div>
         </nav>
@@ -54,9 +65,9 @@
     <div class="content">
         <div class="container">
             <div class="judul">
-                <h2>MASUK</h2>
+                <h2>KURSUS: JavaScript Lanjutan </h2>
             </div>
-            <div class="sosmed">
+            <!-- <div class="sosmed">
                 <div class="facebook">
                     <i class="fa fa-facebook-official"></i>
                     <span style="margin-left: 5px;"> Masuk dengan Facebook</span>
@@ -67,7 +78,7 @@
                 </div>
             </div>
             <div class="formLogin">
-                <form action="home.html" method="POST" class="form">
+                <form action="#" method="POST" class="form">
                     <input class="formInput" type="text" name="_username" value=""
                         placeholder="Masukkan Username atau Email">
                     <input class="formInput" type="password" name="_password" value=""
@@ -75,8 +86,22 @@
                     <button class="btnLogin">Sign in</button>
                 </form>
             </div>
+        </div> -->
+            <div class="video">
+                <iframe width="60%" height="520" src="https://www.youtube.com/embed/C8U_3_SBk6s"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                
+            </div>
+            <div class="list-kursus">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-play-circle"></i> #1 JavaScript Lanjutan - Arrow Function</a></li><br>
+                        <li><a href="#"><i class="fa fa-play-circle"></i> #2 JavaScript Lanjutan - Perkenalan NodeJs</a></li>
+                        <li><a href="#"><i class="fa fa-play-circle"></i> #3 JavaScript Lanjutan - Apa itu VueJs</a></li>
+                    </ul>
+            </div>
+    </body>
         </div>
-    </div>
-</body>
+        
 
 </html>

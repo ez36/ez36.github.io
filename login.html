@@ -9,24 +9,99 @@
     <link rel="stylesheet" href="css/koersoes.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-.content {
-    width: 700px;
-    height: 600px;
-    top: 53%;
-    left: 50%;
-    position: absolute;
-    /* margin-top: -200px;
-    margin-left: -250px; */
-    transform: translate(-50%, -50%);
-    background: #fff;
-    box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.06);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-radius: 5px;
-}
+    <style>
+        .content {
+            width: 700px;
+            height: 500px;
+            top: 31%;
+            left: 68%;
+            /* position: inherit;
+    transform: translate(-50%, -50%); */
+            background: #ffffff;
+            box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.06);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-radius: 5px;
+            margin: 130px auto;
+        }
 
-</style>
+        @media only screen and (max-width: 1050px) {
+            .search {
+                display: none;
+            }
+
+            .inputcari {
+                display: none;
+            }
+
+            .tombolCari {
+                display: none;
+            }
+
+            .kategori {
+                position: fixed;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .login {
+                display: none;
+            }
+
+            .register {
+                display: none;
+            }
+
+            .content {
+                width: 80%;
+            }
+
+            .kategori {
+                position: fixed;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .content {
+                width: 80%;
+            }
+
+            .formInput {
+                width: 85%;
+                margin-left: -1px;
+            }
+
+            .google {
+                width: 100%;
+            }
+
+            .facebook {
+                width: 100%;
+            }
+
+            .btnLogin {
+                margin: 6px auto auto -22px;
+            }
+
+            .btnLogin:hover {
+                background-color: #FFFFFF;
+                color: #0143bc;
+                border: 1px solid #0143bc;
+                cursor: pointer;
+            }
+
+            .sosmed {
+                width: 80%;
+                margin-left: -52px;
+            }
+
+            .kategori {
+                position: fixed;
+                margin-top: 15px;
+                margin-left: 226px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -44,7 +119,7 @@
                 <ul>
                     <button class="register">DAFTAR</button>
                     <button class="login">MASUK</button>
-                    <li class="menu-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li id="cart" class="menu-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="menu-item"><a href="#">MULAI MENGAJAR</a></li>
                     <li class="menu-item"><a href="#">BISNIS</a></li>
                 </ul>
@@ -52,7 +127,7 @@
         </nav>
     </div>
     <div class="content">
-        <div class="container">
+        <div id="card">
             <div class="judul">
                 <h2>MASUK</h2>
             </div>

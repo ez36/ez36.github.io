@@ -6,47 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Koersoes.com</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/particle.css">
+    <link rel="stylesheet" href="css/button.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 
-        body {
-            background: #EEEEF4;
-            color: #999;
-            font-family: Roboto;
+        @media screen and (max-width: 480px) {
+            button {
+                margin: 200px auto auto 42px;
+                padding: 9px 25px 9px 25px;
+                position: relative;
+            }
+
+            .tombol {
+                left: 0;
+            }
         }
 
-        h1 {
-            font-weight: 100;
-            font-size: 27pt;
-            color: #E43;
-        }
+        @media screen and (max-width: 360px) {
+            button {
+                margin: 200px auto auto 24px;
+                padding: 5px 19px 5px 19px;
+                position: relative;
+            }
 
-        p {
-            font-weight: 300;
+            .tombol {
+                left: 6%;
+            }
         }
     </style>
+
 </head>
 
 <body>
-    <h1>Index of /</h1>
-    <h3>Tugas Web 1</h3>
-    <ul>
-        <li><a href="/"> Parent Directory</a></li>
-        <li><a href="login.html"> login.html</a></li>
-        <li><a href="home.html"> home.html</a></li>
-    </ul>
 
-    <h3>Without CSS</h3>
-    <ul>
-        <li><a href="loginnocss.html"> loginnocss.html</a></li>
-        <li><a href="homenocss.html"> homenocss.html</a></li>
-    </ul>
-    <h3>Link</h3>
-    <ul>
-        <li><a href="https://github.com/ez36/ez36.github.io" style="text-decoration: none"><i class="fa fa-github"></i> Repository</a></li>
-    </ul>
+    <div id="particlesWrapper">
+
+        <div class="tombol" action="login.html">
+            <a href="login.html"><button class="ripple">Login</button></a> 
+            <button type="submit" class="ripple">Register</button>
+        </div>
+
+        <div id="particles-js"></div>
+        <div id="particles-js2"></div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        (function (window, $) {
+
+            $(function () {
+
+
+                $('.ripple').on('click', function (event) {
+                    // event.preventDefault();
+
+                    var $div = $('<div/>'),
+                        btnOffset = $(this).offset(),
+                        xPos = event.pageX - btnOffset.left,
+                        yPos = event.pageY - btnOffset.top;
+
+
+
+                    $div.addClass('ripple-effect');
+                    var $ripple = $(".ripple-effect");
+
+                    $ripple.css("height", $(this).height());
+                    $ripple.css("width", $(this).height());
+                    $div
+                        .css({
+                            top: yPos - ($ripple.height() / 2),
+                            left: xPos - ($ripple.width() / 2),
+                            background: $(this).data("ripple-color")
+                        })
+                        .appendTo($(this));
+
+                    window.setTimeout(function () {
+                        $div.remove();
+                    }, 1000);
+                });
+
+            });
+
+        })(window, jQuery);
+    </script>
 </body>
 
 </html>

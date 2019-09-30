@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Course: Google Dev - Koersoes</title>
+    <link rel="stylesheet" href="css/koersoes.css">
+    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .content {
+            width: 100%;
+            height: 800px;
+            top: 70%;
+            left: 50%;
+            position: absolute;
+            /* margin-top: -200px;
+    margin-left: -250px; */
+            transform: translate(-50%, -50%);
+            background: #fff;
+            box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.06);
+            /* border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px; */
+        }
+
+        .logo {
+            font-family: 'Satisfy', cursive;
+            font-size: 20px;
+            margin-top: 9px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .content {
+                width: 80%;
+            }
+
+            .kategori {
+                /* position: fixed; */
+                margin-top: 15px;
+                margin-left: 270px;
+            }
+
+            div span {
+                display: none;
+            }
+
+            .video-information {
+                margin-left: 45px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .kategori {
+                /* position: fixed; */
+            }
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .search {
+                display: none;
+            }
+
+            .inputcari {
+                display: none;
+            }
+
+            .tombolCari {
+                display: none;
+            }
+
+            .kategori {
+                /* position: fixed; */
+            }
+
+            div span {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-app">
+        <nav class="navbar">
+            <div class="lefter">
+                <div class="logo">
+                    <h3>Koersoes.com</h3>
+                </div>
+                <div class="kategori"><i class="fa fa-th"></i> <span>KATEGORI</span></div>
+                <div class="search"><input class="inputcari" type="text" value="" placeholder="Cari sesuatu..."></div>
+                <div class="tombolCari"><i class="fa fa-search"></i></div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <!-- <button class="register">DAFTAR</button>
+                    <button class="login">MASUK</button> -->
+                    <li class="menu-item"><a href="#">AKUN SAYA <i class="fa fa-angle-down"></i></a></li>
+                    <li id="cart" class="menu-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li class="menu-item"><a href="#">KURSUS</a></li>
+                    <li class="menu-item"><a href="#">DASHBOARD</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="judul">
+            <h2>COURSE : GOOGLE DEV</h2>
+        </div>
+        <div class="container-player">
+            <div id="mediaPlayer">
+                <div class="lds-ring" id=preload>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <video id='media-video' preload>
+                    <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4" type='video/mp4'>
+                    <source src='parrots.webm' type='video/webm'>
+                </video>
+                <div id="controls">
+                    <button id=play><i class="fas fa-pause"></i></button>
+                    <button id=audioVolume class="fas fa-volume-off"></button>
+                    <div id="progressBar">
+                        <div id="progress"></div>
+                    </div>
+                    <div id="timer">
+                        <span id="start"> 0 : 00</span>
+                    </div>
+                    <button id=expand><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+            <div id="playlist">
+
+                <div id="0" class="video playing">
+                    <div class="video-imagen"><img
+                            src="https://brandinginasia.com/wp-content/uploads/2015/09/New-Google-Logo-great.jpg">
+                    </div>
+                    <idv class="video-information">
+                        <p>Android from google</p><span>4:34</span>
+                    </idv>
+                </div>
+                <div id="1" class="video">
+                    <div class="video-imagen"><img
+                            src="https://sugeng.id/wp-content/uploads/2014/04/Ditolak-AdSense.png">
+                    </div>
+                    <idv class="video-information">
+                        <p>Tips for Mobile Adsense</p><span>4:34</span>
+                    </idv>
+                </div>
+                <div id="2" class="video">
+                    <div class="video-imagen"><img
+                            src="https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&amp;h=90&amp;sharp=10&amp;q=50">
+                    </div>
+                    <idv class="video-information">
+                        <p>Profundidades del oceano</p><span>1:34</span>
+                    </idv>
+                </div>
+                <div id="3" class="video">
+                    <div class="video-imagen"><img
+                            src="https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&amp;h=90&amp;sharp=10&amp;q=50">
+                    </div>
+                    <idv class="video-information">
+                        <p>Lo angeles timelapse</p><span>3:34</span>
+                    </idv>
+                </div>
+                <div id="4" class="video">
+                    <div class="video-imagen"><img
+                            src="https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&amp;h=90&amp;sharp=10&amp;q=50">
+                    </div>
+                    <idv class="video-information">
+                        <p>Panasonic test video HD</p><span>2:34</span>
+                    </idv>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/video.js"></script>
+</body>
+
+</html>

@@ -18,18 +18,18 @@
             position: absolute;
             transform: translate(-50%, -50%);
             background: #fff;
-            box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.06);
+            /* box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.06); */
         }
 
         .logo {
             font-family: 'Satisfy', cursive;
             font-size: 20px;
-            margin-top: 9px;
+            /* margin-top: 9px; */
         }
 
         @media only screen and (max-width: 480px) {
             .content {
-                width: 80%;
+                /* width: 80%; */
             }
 
             .kategori {
@@ -94,7 +94,7 @@
                 <ul>
                     <!-- <button class="register">DAFTAR</button>
                     <button class="login">MASUK</button> -->
-                    <li class="menu-item"><a href="#">AKUN SAYA <i class="fa fa-angle-down"></i></a></li>
+                    <li class="menu-item"><a href="#">AKUN SAYA </a></li>
                     <li id="cart" class="menu-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="menu-item"><a href="#">KURSUS</a></li>
                     <li class="menu-item"><a href="home.html">DASHBOARD</a></li>
@@ -104,56 +104,47 @@
     </div>
 
     <div class="content">
-        <div class="judul">
-            <h2>COURSE : GOOGLE DEV</h2>
+        <div class="breadcrumb">
+            <a><i class="fa fa-home"></i> Dashboard <i class="fa fa-angle-right"></i> Kursus <i class="fa fa-angle-right"></i> <a style="color: #0f0c29;">Video</a></a>
+            <!-- <hr color="#636e72"> -->
         </div>
-        <div class="container-player">
-            <div id="mediaPlayer">
-                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/a37wgCcBI4A?&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div id="playlist">
+            <div class="judul bounce">
+                    <h2>COURSE : WEB DEVELOPER FROM BEGINNER TO ADVANCE</h2>
+                </div>
+    <div class="grid-row reverse video-gallery">
+ <input type="radio" value="1" name="video-list" id="video-1" checked="checked" /><label for="video-1">#1 HTML</label>
+ <input type="radio" value="2" name="video-list" id="video-2" /><label for="video-2">#2 CSS</label>
+ <input type="radio" value="3" name="video-list" id="video-3" /><label for="video-3">#3 SASS</label>
+ <input type="radio" value="4" name="video-list" id="video-4" /><label for="video-4">#4 Vue</label>
+ <input type="radio" value="5" name="video-list" id="video-5" /><label for="video-5">#5 Angular</label>
+ <input type="radio" value="6" name="video-list" id="video-6" /><label for="video-6">#6 Quiz</label>
+ <!-- videos -->
+ <div class="video video-1">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/rIO5326FgPE" frameborder="0" allowfullscreen></iframe>
+ </div>
+ <div class="video video-2">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" allowfullscreen></iframe>
+ </div>
+ <div class="video video-3">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-2LtZRi6Q0s" frameborder="0" allowfullscreen></iframe>
+ </div>
+ <div class="video video-4">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/3jR6XMsIFuA" frameborder="0" allowfullscreen></iframe>
+ </div>
+ <div class="video video-5">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/1dJT-99KpiI" frameborder="0" allowfullscreen></iframe>
+ </div> 
+ <div class="video video-6">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5GnFZ8XpMak" frameborder="0" allowfullscreen></iframe>
+ </div>
+ <!-- videos -->
+</div>
+        <div class="deskripsi-video">
+            <h2>Web Developer Course</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum incidunt sequi tempora, reiciendis nisi et porro inventore atque rerum corrupti eveniet omnis recusandae natus assumenda. Eum temporibus tempore doloribus ipsa amet nesciunt quasi placeat aperiam maiores? Vero, suscipit aspernatur molestiae eos expedita tempore adipisci culpa dolorum cupiditate consequuntur debitis blanditiis dolores, est quibusdam mollitia natus optio deserunt tempora, praesentium quasi id quo eius. Odio, voluptate consequuntur numquam ea adipisci quod.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim cupiditate quisquam nulla repellendus quaerat? Quae ullam est pariatur. Debitis dolore quam totam asperiores aliquam veniam aspernatur tempora! Aperiam repudiandae non minima libero eveniet tempora recusandae ipsa quia quas consequatur molestias, voluptatibus corporis maxime consectetur illum. Quod, itaque dolor. Placeat suscipit natus nemo adipisci numquam rem, est maiores officia odio ut consectetur fuga possimus voluptatum neque voluptatem molestias exercitationem voluptas, aspernatur, vero eligendi aliquid. Veritatis quas ullam expedita eveniet recusandae perspiciatis illum iste repudiandae dolores vitae. Quasi ab alias ea id debitis optio culpa hic iusto magni aspernatur fugit, officia in.</p>
 
-                <div id="0" class="video playing">
-                    <div class="video-imagen"><img
-                            src="https://brandinginasia.com/wp-content/uploads/2015/09/New-Google-Logo-great.jpg">
-                    </div>
-                    <idv class="video-information">
-                        <p>Android from google</p><span>4:34</span>
-                    </idv>
-                </div>
-                <div id="1" class="video">
-                    <div class="video-imagen"><img
-                            src="https://sugeng.id/wp-content/uploads/2014/04/Ditolak-AdSense.png">
-                    </div>
-                    <idv class="video-information">
-                        <p>Tips for Mobile Adsense</p><span>4:34</span>
-                    </idv>
-                </div>
-                <div id="2" class="video">
-                    <div class="video-imagen"><img
-                            src="https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&amp;h=90&amp;sharp=10&amp;q=50">
-                    </div>
-                    <idv class="video-information">
-                        <p>Profundidades del oceano</p><span>1:34</span>
-                    </idv>
-                </div>
-                <div id="3" class="video">
-                    <div class="video-imagen"><img
-                            src="https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&amp;h=90&amp;sharp=10&amp;q=50">
-                    </div>
-                    <idv class="video-information">
-                        <p>Lo angeles timelapse</p><span>3:34</span>
-                    </idv>
-                </div>
-                <div id="4" class="video">
-                    <div class="video-imagen"><img
-                            src="https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&amp;h=90&amp;sharp=10&amp;q=50">
-                    </div>
-                    <idv class="video-information">
-                        <p>Panasonic test video HD</p><span>2:34</span>
-                    </idv>
-                </div>
-            </div>
+            <span>Tags: </span><button class="tags">HTML</button><button class="tags">CSS</button><button class="tags">Javascript</button>
         </div>
     </div>
     <script src="js/video.js"></script>

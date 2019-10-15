@@ -369,7 +369,7 @@ li#cart {}
 
 .judul {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .judul h2 {
@@ -488,3 +488,126 @@ li#cart {}
         color: #bfbfbf;
     }
 }
+
+.breadcrumb {
+    color: #636e72;
+    padding-top: 13px;
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: -10px;
+    word-spacing: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+.list_produk {
+    margin: -260px 0 30px;
+    background: #fafafa;
+    width: 100vw;
+    padding: 0 0 45px;
+}
+
+.list_produk .produk {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.produk h2 {
+    text-align: center;
+    margin: 0 0 60px;
+    color: #003A79;
+}
+
+.item_produk {
+    float: left;
+    width: calc(33.33% - 30px);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    margin: 15px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+}
+
+.item_produk__img {
+    height: 200px;
+    width: calc(100% - 60px);
+    position: relative;
+    left: 30px;
+    top: -30px;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.item_produk h3 {
+    padding: 0 30px;
+    color: #003A79;
+}
+
+.item_produk p {
+    padding: 0 30px;
+    line-height: 1.45;
+}
+
+a.article-Button {
+    padding: 15px 78px 15px 30px;
+    margin: 15px 30px -25px 0px;
+    border-radius: 30px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-style: italic;
+    color: #ffffff;
+    transition: all 0.3s linear;
+    text-decoration: none;
+    width: auto;
+    background-color: #003A79;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    float: right;
+}
+
+.article-Button:after {
+    background: url(https://www.desertfinancial.com/-/media/desert-financial/misc/sharing-success//ctaArrow.svg);
+    background-repeat: no-repeat;
+    content: "";
+    height: 16px;
+    margin-left: 15px;
+    margin-top: 5px;
+    padding-right: 38px;
+    position: absolute;
+    transition: all 0.3s linear;
+}
+
+.item_produk:hover {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+}
+
+.item_produk a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media screen and (max-width: 695px) {
+    .item_produk {
+        width: 100%;
+        margin: 30px 0 60px;
+        display: block;
+    }
+
+    /* Chat button */
+    

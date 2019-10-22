@@ -441,6 +441,10 @@ li#cart {}
     letter-spacing: 1px;
 }
 
+select.formInput {
+    width: 48%;
+}
+
 .btnLogin {
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
@@ -453,6 +457,24 @@ li#cart {}
     background-color: #0143bc;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
+}
+
+.btnRegister {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    width: 80px;
+    height: 40px;
+    margin: 6px auto 50px -243px;
+    background-color: #0143bc;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btnRegister:hover {
+    cursor: pointer;
 }
 
 .btnLogin:hover {

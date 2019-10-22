@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Masuk - Koersoes</title>
+    <title>Daftar - Koersoes</title>
     <link rel="stylesheet" href="css/koersoes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         .content {
             width: 700px;
-            height: 500px;
+            height: auto;
             top: 31%;
             left: 68%;
             background: #ffffff;
@@ -39,8 +39,9 @@
                 width: 100%;
             }
 
-            .btnLogin {
-                margin: 6px auto auto -22px;
+
+            .btnRegister {
+                margin: 10px auto 30px -22px;
             }
 
             .btnLogin:hover {
@@ -52,7 +53,7 @@
 
             .sosmed {
                 width: 80%;
-                margin-left: -60px;
+                margin-left: -52px;
             }
 
             .kategori {
@@ -64,7 +65,13 @@
             div span {
                 display: none;
             }
+
+            select.formInput {
+                width: 70%;
+            }
+
         }
+
         @media only screen and (max-width: 600px) {
             .login {
                 display: none;
@@ -78,15 +85,21 @@
                 width: 80%;
             }
 
-            .sosmed {
-                width: 80%;
-                margin-left: -49px;
-            }
-
             .kategori {
                 /* position: fixed; */
             }
+
+            .sosmed {
+                width: 80%;
+                margin-left: -52px;
+            }
+
+            /* select.formInput {
+                margin-left: 52px;
+            } */
+
         }
+
         @media only screen and (max-width: 1050px) {
             .search {
                 display: none;
@@ -104,7 +117,6 @@
                 /* position: fixed; */
             }
         }
-
     </style>
 </head>
 
@@ -121,7 +133,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <a href="register.html"><button class="register">DAFTAR</button></a>
+                    <a href="login.html"><button class="login">MASUK</button></a>
                     <li id="cart" class="menu-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="menu-item"><a href="#">MULAI MENGAJAR</a></li>
                     <li class="menu-item"><a href="#">BISNIS</a></li>
@@ -132,25 +144,31 @@
     <div class="content">
         <div id="card">
             <div class="judul">
-                <h2>MASUK</h2>
+                <h2>DAFTAR</h2>
             </div>
             <div class="sosmed">
                 <div class="facebook">
                     <i class="fa fa-facebook-official"></i>
-                    <span style="margin-left: 5px;"> Masuk dengan Facebook</span>
+                    <span style="margin-left: 5px;"> Daftar dengan Facebook</span>
                 </div>
                 <div class="google">
                     <i class="fa fa-google"></i>
-                    <span style="margin-left: 5px;"> Masuk dengan Google</span>
+                    <span style="margin-left: 5px;"> Daftar dengan Google</span>
                 </div>
             </div>
             <div class="formLogin">
                 <form action="home.html" class="form">
-                    <input class="formInput" type="text"
-                        placeholder="Masukkan Username atau Email">
-                    <input class="formInput" type="password"
-                        placeholder="Masukkan Kata Sandi">
-                    <button class="btnLogin">Sign in</button>
+                    <input class="formInput" type="text" placeholder="Masukkan Nama">
+                    <input class="formInput" type="text" placeholder="Masukkan Username">
+                    <input class="formInput" type="email" placeholder="Masukkan Email">
+                    <select class="formInput" name="cars">
+                        <option>Jenis Kelamin</option>
+                        <option value="saab">Laki - laki</option>
+                        <option value="fiat">Perempuan</option>
+                        <option value="audi">Lainnya</option>
+                    </select>
+                    <input class="formInput" type="password" placeholder="Masukkan Kata Sandi">
+                    <button class="btnRegister">Daftar</button>
                 </form>
             </div>
         </div>

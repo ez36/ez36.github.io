@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload Gambar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/burung.css">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #eeeeee;
+        }
+
+        .file-upload {
+            background-color: #ffffff;
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .tombol-upload {
+            width: 100%;
+            margin: 0;
+            color: #fff;
+            background: #1FB264;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            border-bottom: 4px solid #15824B;
+            transition: all .2s ease;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .tombol-upload:hover {
+            background: #1AA059;
+            color: #ffffff;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        .tombol-upload:active {
+            border: 0;
+            transition: all .2s ease;
+        }
+
+        .isi-konten {
+            display: none;
+            text-align: center;
+        }
+
+        .inputan-file {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .kotak-upload {
+            margin-top: 20px;
+            border: 4px dashed #1FB264;
+            position: relative;
+        }
+
+        .drop-gambar,
+        .kotak-upload:hover {
+            background-color: #1FB264;
+            border: 4px dashed #ffffff;
+        }
+
+        .judul-gambar-box {
+            padding: 0 15px 15px 15px;
+            color: #222;
+        }
+
+        .drag-text {
+            text-align: center;
+        }
+
+        .drag-text h3 {
+            font-weight: 100;
+            text-transform: uppercase;
+            color: #15824B;
+            padding: 60px 0;
+        }
+
+        .style-gambar {
+            max-height: 200px;
+            max-width: 200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hapus-gambar {
+            width: 200px;
+            margin: 0;
+            color: #fff;
+            background: #cd4535;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            border-bottom: 4px solid #b02818;
+            transition: all .2s ease;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .hapus-gambar:hover {
+            background: #c13b2a;
+            color: #ffffff;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        .hapus-gambar:active {
+            border: 0;
+            transition: all .2s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="file-upload">
+        <button class="tombol-upload" type="button" onclick="$('.inputan-file').trigger( 'click' )">Tambahkan
+            Gambar</button>
+
+        <div class="kotak-upload">
+            <input id="file" class="inputan-file" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <h3>Pilih atau Drop Gambar ke dalam kotak</h3>
+            </div>
+        </div>
+        <div class="isi-konten">
+            <img class="style-gambar" src="#" alt="File Gambar Anda" />
+            <div class="judul-gambar-box">
+                <button type="button" onclick="removeUpload()" class="hapus-gambar">Hapus <span
+                        class="judul-gambar">Uploaded Image</span></button>
+            </div>
+        </div>
+
+    </div>
+    <button onclick="btnSubmit()" id="button" class="button">
+        <span class="submit">Submit</span>
+        <span class="loading"><i class="fa fa-refresh"></i></span>
+        <span class="check"><i class="fa fa-check"></i></span>
+    </button>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        var ukuran = false;
+
+        function ukuranValidation() {
+            var input = this.input;
+            const file = document.getElementById('file'); // Mengambil file berdasarkan id
+            if (file.files.length > 0) {
+                for (const i = 0; i <= file.files.length - 1; i++) {
+                    const fileSize = file.files.item(i).size;
+                    const size = Math.round((fileSize / 1024)); // Ukuran file
+                    if (size >= 1024) {
+                        alert("Ukuran file terlalu besar, pilih file yang lebih kecil dari 1 MB");
+                    } else if (size < 50) {
+                        alert("Ukuran filenya terlalu kecil, pilih ukuran file minimal 50 KB");
+                    } else {
+                        document.getElementById("button").disabled = false;
+                        return ukuran = true;
+                    }
+                }
+            }
+        }
+
+        function readURL(input) {
+            ukuranValidation();
+            if (input.files && input.files[0] && ukuran) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('.kotak-upload').hide();
+
+                    $('.style-gambar').attr('src', e.target.result);
+                    $('.isi-konten').show();
+
+                    $('.judul-gambar').html(input.files[0].name);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+
+            } else {
+                removeUpload();
+            }
+        }
+
+        function removeUpload() {
+            $('.inputan-file').replaceWith($('.inputan-file').clone());
+            $('.isi-konten').hide();
+            $('.kotak-upload').show();
+        }
+        $('.kotak-upload').bind('dragover', function () {
+            $('.kotak-upload').addClass('drop-gambar');
+        });
+        $('.kotak-upload').bind('dragleave', function () {
+            $('.kotak-upload').removeClass('drop-gambar');
+        });
+
+        if (document.getElementById("file").files.length == 0) {
+            document.getElementById("button").disabled = true;
+        }
+
+        const button = document.querySelector('.button');
+        const submit = document.querySelector('.submit');
+
+        function toggleClass() {
+            this.classList.toggle('active');
+        }
+
+        function addClass() {
+            this.classList.add('finished');
+        }
+        button.addEventListener('click', toggleClass);
+        button.addEventListener('transitionend', toggleClass);
+        button.addEventListener('transitionend', addClass);
+    </script>
+
+</body>
+
+</html>

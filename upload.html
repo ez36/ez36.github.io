@@ -8,18 +8,16 @@
     <title>Upload Gambar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/burung.css">
+    <link rel="stylesheet" href="css/koersoes.css">
+    <link rel="stylesheet" href="css/menu.css">
 
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #eeeeee;
-        }
-
         .file-upload {
             background-color: #ffffff;
             width: 600px;
             margin: 0 auto;
             padding: 20px;
+            box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.1);
         }
 
         .tombol-upload {
@@ -126,10 +124,114 @@
             border: 0;
             transition: all .2s ease;
         }
+
+        .navbar {
+            position: fixed;
+        }
     </style>
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="lefter">
+            <div class="logo">
+                <h3>Koersoes.com</h3>
+            </div>
+            <header>
+                <!-- Dropdown -->
+                <div class="cd-dropdown-wrapper">
+                    <a class="cd-dropdown-trigger" href="#0"> KATEGORI</a>
+                    <nav class="cd-dropdown">
+                        <h2>Kategori</h2>
+                        <a href="#0" class="cd-close">Close</a>
+                        <ul class="cd-dropdown-content">
+                            <li>
+                                <form class="cd-search">
+                                    <input type="search" placeholder="Search...">
+                                </form>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Events</a>
+
+                                <ul class="cd-secondary-dropdown is-hidden">
+                                    <li class="go-back"><a href="#0">Menu</a></li>
+                                    <li class="see-all"><a href="#">All Events</a></li>
+
+
+                                    <li class="has-children">
+                                        <a href="#">Tops</a>
+
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#0">Events</a></li>
+                                            <li><a href="#">Google Dev Summit </a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="has-children">
+                                <a href="#">Course List</a>
+
+                                <ul class="cd-dropdown-gallery is-hidden">
+
+                                    <li>
+                                        <a class="cd-dropdown-item" href="#">
+                                            <h3>Free Course</h3>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="cd-dropdown-item" href="#">
+                                            <h3>Premium Course</h3>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+                            <li class="has-children">
+                                <a href="#">Services</a>
+                                <ul class="cd-dropdown-icons is-hidden">
+                                    <li class="see-all"><a href="#">Browse Services</a></li>
+                                    <li>
+                                        <a class="cd-dropdown-item item-1" href="#">
+                                            <h3>Service #1</h3>
+                                            <p>This is the item description</p>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="cd-dropdown-item item-2" href="#">
+                                            <h3>Service #2</h3>
+                                            <p>This is the item description</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="cd-divider">Koersoes.com</li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <!-- <span class="kategori"><i class="fa fa-th"></i> <span> KATEGORI</span></div> -->
+            <div class="search"><input class="inputcari" type="text" value="" placeholder="Cari sesuatu..."></div>
+            <div class="tombolCari"><i class="fa fa-search"></i></div>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li class="menu-item"><a href="index.html"><i class="fa fa-sign-out"></i></a></li>
+                <li class="menu-item"><a href="#">MY ACCOUNT</a></li>
+                <!-- <button class="register">DAFTAR</button>
+                                <button class="login">MASUK</button> -->
+                <li class="menu-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                <li class="menu-item"><a href="video.html">KURSUS SAYA</a></li>
+                <li class="menu-item"><a href="#">DASHBOARD</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="file-upload">
         <button class="tombol-upload" type="button" onclick="$('.inputan-file').trigger( 'click' )">Tambahkan
             Gambar</button>
@@ -155,6 +257,99 @@
         <span class="check"><i class="fa fa-check"></i></span>
     </button>
     <script src="js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $('.slider').each(function () {
+            var $this = $(this);
+            var $group = $this.find('.slide_group');
+            var $slides = $this.find('.slide');
+            var bulletArray = [];
+            var currentIndex = 0;
+            var timeout;
+
+            function move(newIndex) {
+                var animateLeft, slideLeft;
+
+                advance();
+
+                if ($group.is(':animated') || currentIndex === newIndex) {
+                    return;
+                }
+
+                bulletArray[currentIndex].removeClass('active');
+                bulletArray[newIndex].addClass('active');
+
+                if (newIndex > currentIndex) {
+                    slideLeft = '100%';
+                    animateLeft = '-100%';
+                } else {
+                    slideLeft = '-100%';
+                    animateLeft = '100%';
+                }
+
+                $slides.eq(newIndex).css({
+                    display: 'block',
+                    left: slideLeft
+                });
+                $group.animate({
+                    left: animateLeft
+                }, function () {
+                    $slides.eq(currentIndex).css({
+                        display: 'none'
+                    });
+                    $slides.eq(newIndex).css({
+                        left: 0
+                    });
+                    $group.css({
+                        left: 0
+                    });
+                    currentIndex = newIndex;
+                });
+            }
+
+            function advance() {
+                clearTimeout(timeout);
+                timeout = setTimeout(function () {
+                    if (currentIndex < ($slides.length - 1)) {
+                        move(currentIndex + 1);
+                    } else {
+                        move(0);
+                    }
+                }, 4000);
+            }
+
+            $('.next_btn').on('click', function () {
+                if (currentIndex < ($slides.length - 1)) {
+                    move(currentIndex + 1);
+                } else {
+                    move(0);
+                }
+            });
+
+            $('.previous_btn').on('click', function () {
+                if (currentIndex !== 0) {
+                    move(currentIndex - 1);
+                } else {
+                    move(3);
+                }
+            });
+
+            $.each($slides, function (index) {
+                var $button = $('<a class="slide_btn">&bull;</a>');
+
+                if (index === currentIndex) {
+                    $button.addClass('active');
+                }
+                $button.on('click', function () {
+                    move(index);
+                }).appendTo('.slide_buttons');
+                bulletArray.push($button);
+            });
+
+            advance();
+        });
+    </script>
+    <script src="js/menu.js"></script>
     <script>
         var ukuran = false;
 

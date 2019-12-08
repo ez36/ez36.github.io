@@ -1,0 +1,45 @@
+body {
+  font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+}
+.chartContainer {
+  margin-left: 50px;
+  margin-top: -10px;
+}
+.verticalChart {
+  width: 100%;
+}
+.verticalChart .singleBar {
+  width: 9%;
+  float: left;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+.verticalChart .singleBar .bar {
+  position: relative;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+.verticalChart .singleBar .bar .value {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background:#fcc728;
+  color: #ffffff;
+}
+.verticalChart .singleBar .bar .value span {
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  color: #ffffff;
+  text-shadow: 0px -1px 0px #ffffff, 0px 1px 0px #ffffff, 1px 0px 0px #ffffff, -1px 0px 0px #ffffff, -1px -1px 0px #ffffff, -1px 1px 0px #ffffff, 1px 1px 0px #ffffff, 1px -1px 0px #ffffff;
+  display: none;
+  text-align: center;
+}
+.verticalChart .singleBar .title {
+  margin-top: 5px;
+  text-align: center;
+  color: #fff;
+}

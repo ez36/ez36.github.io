@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Dashboard - Lectures</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/chart.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+<!-- Modal -->
+<div class="modal" id="modal-one" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2><i class="fas fa-bell"></i> Notification</h2>
+            <a href="#" class="btn-close" aria-hidden="true">x</a>
+          </div>
+          <div class="modal-body">
+            <p>No notification</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn">OK</a>
+          </div>
+        </div>
+      </div>
+    <div class="todo">
+        <nav>
+            <div class="logo">
+                <div>
+                    <h3>Koersoes.com</h3>
+                </div>
+            </div>
+            <ul>
+                <li>Dashboard</li>
+                <li>Courses List<i class="fas fa-chevron-right flecha"></i></li>
+                <ul class="subboton">
+                    <li>Add New Course</li>
+                </ul>
+                <li>Income<i class="fas fa-chevron-right flecha"></i></li>
+                <ul class="subboton">
+                    <li>My Income</li>
+                </ul>
+                <li>Tickets</li>
+            </ul>
+        </nav>
+
+
+
+        <main class="panelD">
+
+            <header>
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMiAwYzYuNjIzIDAgMTIgNS4zNzcgMTIgMTJzLTUuMzc3IDEyLTEyIDEyLTEyLTUuMzc3LTEyLTEyIDUuMzc3LTEyIDEyLTEyem04LjEyNyAxOS40MWMtLjI4Mi0uNDAxLS43NzItLjY1NC0xLjYyNC0uODUtMy44NDgtLjkwNi00LjA5Ny0xLjUwMS00LjM1Mi0yLjA1OS0uMjU5LS41NjUtLjE5LTEuMjMuMjA1LTEuOTc3IDEuNzI2LTMuMjU3IDIuMDktNi4wMjQgMS4wMjctNy43OS0uNjc0LTEuMTE5LTEuODc1LTEuNzM0LTMuMzgzLTEuNzM0LTEuNTIxIDAtMi43MzIuNjI2LTMuNDA5IDEuNzYzLTEuMDY2IDEuNzg5LS42OTMgNC41NDQgMS4wNDkgNy43NTcuNDAyLjc0Mi40NzYgMS40MDYuMjIgMS45NzQtLjI2NS41ODYtLjYxMSAxLjE5LTQuMzY1IDIuMDY2LS44NTIuMTk2LTEuMzQyLjQ0OS0xLjYyMy44NDggMi4wMTIgMi4yMDcgNC45MSAzLjU5MiA4LjEyOCAzLjU5MnM2LjExNS0xLjM4NSA4LjEyNy0zLjU5em0uNjUtLjc4MmMxLjM5NS0xLjg0NCAyLjIyMy00LjE0IDIuMjIzLTYuNjI4IDAtNi4wNzEtNC45MjktMTEtMTEtMTFzLTExIDQuOTI5LTExIDExYzAgMi40ODcuODI3IDQuNzgzIDIuMjIyIDYuNjI2LjQwOS0uNDUyIDEuMDQ5LS44MSAyLjA0OS0xLjA0MSAyLjAyNS0uNDYyIDMuMzc2LS44MzYgMy42NzgtMS41MDIuMTIyLS4yNzIuMDYxLS42MjgtLjE4OC0xLjA4Ny0xLjkxNy0zLjUzNS0yLjI4Mi02LjY0MS0xLjAzLTguNzQ1Ljg1My0xLjQzMSAyLjQwOC0yLjI1MSA0LjI2OS0yLjI1MSAxLjg0NSAwIDMuMzkxLjgwOCA0LjI0IDIuMjE4IDEuMjUxIDIuMDc5Ljg5NiA1LjE5NS0xIDguNzc0LS4yNDUuNDYzLS4zMDQuODIxLS4xNzkgMS4wOTQuMzA1LjY2OCAxLjY0NCAxLjAzOCAzLjY2NyAxLjQ5OSAxIC4yMyAxLjY0LjU5IDIuMDQ5IDEuMDQzeiIvPjwvc3ZnPg=="
+                    class="profil">
+                <a href="#modal-one"><img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xIDIwdi0yLjk0NmMxLjk5My0uNjU2IDIuNTc1LTIuMTU4IDMuNjY4LTYuMDc3Ljg5Ny0zLjIxOCAxLjg5MS02Ljc4NCA0Ljg3My04LjAyMy0uMDI3LS4xNDctLjA0MS0uMjk5LS4wNDEtLjQ1NCAwLTEuMzggMS4xMi0yLjUgMi41LTIuNXMyLjUgMS4xMiAyLjUgMi41YzAgLjE1Ni0uMDE0LjMwOS0uMDQyLjQ1OCAyLjk4NyAxLjI0NCAzLjk4NCA0LjgxMyA0Ljg4NCA4LjAzMyAxLjEwMyAzLjk1IDEuNjk3IDUuNDIzIDMuNjU4IDYuMDYydjIuOTQ3aC03YzAgMi4yMDgtMS43OTIgNC00IDRzLTQtMS43OTItNC00aC03em0xNCAwaC02YzAgMS42NTYgMS4zNDQgMyAzIDNzMy0xLjM0NCAzLTN6bS0xMy0xaDIwdi0xLjI0MWMtMi4wNjItLjkxOC0yLjgyLTMuNjMzLTMuNjIxLTYuNDk4LTEuMDY2LTMuODE0LTIuMTY3LTcuNzU4LTYuMzc5LTcuNzYxLTQuMjEgMC01LjMwOCAzLjkzNy02LjM2OSA3Ljc0NS0uOCAyLjg3Mi0xLjU1OSA1LjU5My0zLjYzMSA2LjUxNHYxLjI0MXptMTEuNDkyLTE2LjM0NWwuMDA4LS4xNTVjMC0uODI4LS42NzItMS41LTEuNS0xLjVzLTEuNS42NzItMS41IDEuNWwuMDA4LjE1MmMuNDU1LS4wOTkuOTQ5LS4xNTIgMS40ODctLjE1Mi41NDIgMCAxLjAzOS4wNTQgMS40OTcuMTU1eiIvPjwvc3ZnPg=="></a>
+                <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yMCAxNWMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMSAuNDQ4LTEgMS0xIDEgLjQ0OCAxIDFtLTMgMGMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMSAuNDQ4LTEgMS0xIDEgLjQ0OCAxIDFtLTMgMGMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMSAuNDQ4LTEgMS0xIDEgLjQ0OCAxIDFtNS40MTUgNC45NDZjLTEgLjI1Ni0xLjk4OS40ODItMy4zMjQuNDgyLTMuNDY1IDAtNy4wOTEtMi4wNjUtNy4wOTEtNS40MjMgMC0zLjEyOCAzLjE0LTUuNjcyIDctNS42NzIgMy44NDQgMCA3IDIuNTQyIDcgNS42NzIgMCAxLjU5MS0uNjQ2IDIuNTI3LTEuNDgxIDMuNTI3bC44MzkgMi42ODYtMi45NDMtMS4yNzJ6bS0xMy4zNzMtMy4zNzVsLTQuMzg5IDEuODk2IDEuMjU2LTQuMDEyYy0xLjEyMS0xLjM0MS0xLjkwOS0yLjY2NS0xLjkwOS00LjY5OSAwLTQuMjc3IDQuMjYyLTcuNzU2IDkuNS03Ljc1NiA1LjAxOCAwIDkuMTI4IDMuMTk0IDkuNDY3IDcuMjIyLTEuMTktLjU2Ni0yLjU1MS0uODg5LTMuOTY3LS44ODktNC4xOTkgMC04IDIuNzk3LTggNi42NzIgMCAuNzEyLjE0NyAxLjQuNDExIDIuMDQ5LS45NTMtLjEyNi0xLjU0Ni0uMjcyLTIuMzY5LS40ODNtMTcuOTU4LTEuNTY2YzAtMi4xNzItMS4xOTktNC4wMTUtMy4wMDItNS4yMWwuMDAyLS4wMzljMC01LjA4Ni00Ljk4OC04Ljc1Ni0xMC41LTguNzU2LTUuNTQ2IDAtMTAuNSAzLjY5OC0xMC41IDguNzU2IDAgMS43OTQuNjQ2IDMuNTU2IDEuNzkxIDQuOTIybC0xLjc0NCA1LjU3MiA2LjA3OC0yLjYyNWMuOTgyLjI1MyAxLjkzMi40MDcgMi44NS40ODkgMS4zMTcgMS45NTMgMy44NzYgMy4zMTQgNy4xMTYgMy4zMTQgMS4wMTkgMCAyLjEwNS0uMTM1IDMuMjQyLS40MjhsNC42MzEgMi0xLjMyOC00LjI0NWMuODcxLTEuMDQyIDEuMzY0LTIuMzg0IDEuMzY0LTMuNzUiLz48L3N2Zz4=">
+            </header>
+
+             <h1 class="tituloD" style="text-decoration: none; color: black;">Home <i class="fas fa-chevron-right" style="font-size: 15px;"></i> Dashboard</h1> 
+
+            <h2>Month Revenue Course<i class="fas fa-arrow-down"></i></h2>
+            <div class="tabla">
+                <table cellpadding="0" cellspacing="0">
+                    <tr class="negrita">
+                        <th>&nbsp;</th>
+                        <th>Oktober</th>
+                        <th>November</th>
+                        <th>Desember</th>
+                    </tr>
+                    <tr>
+                        <th>ES6 Fullstack - Basecamp 2019</th>
+                        <th>$300</th>
+                        <th>$758</th>
+                        <th>$314</th>
+                    </tr>
+                    <tr>
+                        <th>Laravel ft. VueJs FullStack Course</th>
+                        <th>$453</th>
+                        <th>$159</th>
+                        <th>$239</th>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>Last Ordered Item<i class="fas fa-arrow-down"></i></h2>
+            <div class="tabla">
+                <table cellpadding="0" cellspacing="0">
+                    <tr class="negrita">
+                        <th>Course</th>
+                        <th>Income</th>
+                        <th>Time</th>
+                    </tr>
+                    <tr>
+                        <th>Basic Python for Beginner</th>
+                        <th>$30</th>
+                        <th>Desember 07, 2019 - 10:19 AM</th>
+                    </tr>
+                    <tr>
+                        <th>Learn TypeScript with Real Project</th>
+                        <th>$43</th>
+                        <th>Desember 07, 2019 - 09:47 AM</th>
+                    </tr>
+                    <tr>
+                        <th>Laravel Advance Courses: Build Real Project</th>
+                        <th>$15</th>
+                        <th>Desember 07, 2019 - 06:00 AM</th>
+                    </tr>
+
+                </table>
+            </div>
+            <h2>Course Income<i class="fas fa-arrow-down"></i></h2>
+            <div class="chartContainer">      
+    <!-- Chart -->
+
+    <div class="verticalChart">
+
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 70%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">70%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">May</div>
+      
+        </div>
+      
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 50%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">50%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">June</div>
+      
+        </div>
+      
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 47%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">47%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">July</div>
+      
+        </div>
+      
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 39%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">39%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">August</div>
+      
+        </div>
+      
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 37%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">37%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">September</div>
+      
+        </div>
+      
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 36%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">36%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">October</div>
+      
+        </div>
+      
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 45%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">45%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">November</div>
+      
+        </div>
+      
+        <div class="singleBar">
+      
+          <div class="bar">
+      
+            <div class="value" style="height: 24%;">
+              <span style="color: rgb(45, 137, 239); display: inline;">24%</span>
+            </div>
+      
+          </div>
+      
+          <div style="color: rgb(45, 137, 239);" class="title">Desember</div>
+      
+        </div>
+      
+    
+        <div class="clearfix"></div>
+      
+      </div>
+            </div>
+        </main>
+        
+          
+
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/chart.js"></script>
+</body>
+
+</html>

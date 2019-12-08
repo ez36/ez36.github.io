@@ -10,6 +10,24 @@ body {
     overflow-x: hidden;
 }
 
+.cookie-disclaimer {
+    background: #000000;
+    color: #FFF;
+    opacity: 0.9;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 150px;
+    position: fixed;
+  }  
+  .ccontainer {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+
 .navbar {
     width: 100%;
     height: 70px;

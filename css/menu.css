@@ -45,7 +45,6 @@ input[type=text]::-ms-reveal {
   -------------------------------- */
 header {
     height: 100px;
-    background: #ffffff;
 }
 
 .cd-dropdown-wrapper {

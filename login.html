@@ -164,18 +164,22 @@
             $("#submit").click(function () {
                 var username = $("#username").val();
                 var password = $("#password").val();
-                // Checking for blank fields.
+                // Cek jika inputan kosong
                 if (username == '' || password == '') {
-                    $('input[type="text"],input[type="password"]').css("border", "2px solid red");
-                    $('input[type="text"],input[type="password"]').css("box-shadow", "0 0 3px red");
+                    $('#username').css("border", "2px solid red");
+                    $('#password').css("border", "2px solid red");
                     alert("Please fill all fields...!!!!!!");
-                    console.log('anjay')
-                } else if (username == 'admin' && password == 'admin') {
+                    console.log('kosong')
+                } 
+                // Cek Jika inputan benar username admin
+                else if (username == 'admin' && password == 'admin') {
                     window.location.href = "https://ez36.github.io/admin/index.html";
                 }
+                // Cek Jika inputan benar username user
                 else if (username == 'user' && password == 'user') {
                     window.location.href = "https://ez36.github.io/home.html";
                 }
+                // Cek Jika inputan salah
                 else {
                     alert('Username / Password Salah');
                 }

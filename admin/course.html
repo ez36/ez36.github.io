@@ -16,8 +16,48 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
+<style>
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left: 30px;
+}
 
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
 
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+</style>
 </head>
 
 <body>
@@ -45,7 +85,7 @@
             </div>
             <ul>
                 <li><a href="index.html" style="text-decoration: none;">Dashboard</a></li>
-                <li><a href="course.html" style="text-decoration: none;">Courses List</a><i class="fas fa-chevron-right flecha"></i></li>
+                <li><a href="#" style="text-decoration: none;">Courses List</a><i class="fas fa-chevron-right flecha"></i></li>
                 <ul class="subboton">
                     <li>Add New Course</li>
                 </ul>
@@ -70,181 +110,18 @@
                     src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yMCAxNWMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMSAuNDQ4LTEgMS0xIDEgLjQ0OCAxIDFtLTMgMGMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMSAuNDQ4LTEgMS0xIDEgLjQ0OCAxIDFtLTMgMGMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMSAuNDQ4LTEgMS0xIDEgLjQ0OCAxIDFtNS40MTUgNC45NDZjLTEgLjI1Ni0xLjk4OS40ODItMy4zMjQuNDgyLTMuNDY1IDAtNy4wOTEtMi4wNjUtNy4wOTEtNS40MjMgMC0zLjEyOCAzLjE0LTUuNjcyIDctNS42NzIgMy44NDQgMCA3IDIuNTQyIDcgNS42NzIgMCAxLjU5MS0uNjQ2IDIuNTI3LTEuNDgxIDMuNTI3bC44MzkgMi42ODYtMi45NDMtMS4yNzJ6bS0xMy4zNzMtMy4zNzVsLTQuMzg5IDEuODk2IDEuMjU2LTQuMDEyYy0xLjEyMS0xLjM0MS0xLjkwOS0yLjY2NS0xLjkwOS00LjY5OSAwLTQuMjc3IDQuMjYyLTcuNzU2IDkuNS03Ljc1NiA1LjAxOCAwIDkuMTI4IDMuMTk0IDkuNDY3IDcuMjIyLTEuMTktLjU2Ni0yLjU1MS0uODg5LTMuOTY3LS44ODktNC4xOTkgMC04IDIuNzk3LTggNi42NzIgMCAuNzEyLjE0NyAxLjQuNDExIDIuMDQ5LS45NTMtLjEyNi0xLjU0Ni0uMjcyLTIuMzY5LS40ODNtMTcuOTU4LTEuNTY2YzAtMi4xNzItMS4xOTktNC4wMTUtMy4wMDItNS4yMWwuMDAyLS4wMzljMC01LjA4Ni00Ljk4OC04Ljc1Ni0xMC41LTguNzU2LTUuNTQ2IDAtMTAuNSAzLjY5OC0xMC41IDguNzU2IDAgMS43OTQuNjQ2IDMuNTU2IDEuNzkxIDQuOTIybC0xLjc0NCA1LjU3MiA2LjA3OC0yLjYyNWMuOTgyLjI1MyAxLjkzMi40MDcgMi44NS40ODkgMS4zMTcgMS45NTMgMy44NzYgMy4zMTQgNy4xMTYgMy4zMTQgMS4wMTkgMCAyLjEwNS0uMTM1IDMuMjQyLS40MjhsNC42MzEgMi0xLjMyOC00LjI0NWMuODcxLTEuMDQyIDEuMzY0LTIuMzg0IDEuMzY0LTMuNzUiLz48L3N2Zz4=">
             </header>
 
-             <h1 class="tituloD" style="text-decoration: none; color: black;">Home <i class="fas fa-chevron-right" style="font-size: 15px;"></i> Dashboard</h1> 
-
-            <h2>Month Revenue Course<i class="fas fa-arrow-down"></i></h2>
-            <div class="tabla">
-                <table cellpadding="0" cellspacing="0">
-                    <tr class="negrita">
-                        <th>Course</th>
-                        <th>Oktober</th>
-                        <th>November</th>
-                        <th>Desember</th>
-                    </tr>
-                    <tr>
-                        <th>ES6 Fullstack - Basecamp 2019</th>
-                        <th>$300</th>
-                        <th>$758</th>
-                        <th>$314</th>
-                    </tr>
-                    <tr>
-                        <th>Laravel ft. VueJs FullStack Course</th>
-                        <th>$453</th>
-                        <th>$159</th>
-                        <th>$239</th>
-                    </tr>
-                </table>
-            </div>
-
-            <h2>Last Ordered Item<i class="fas fa-arrow-down"></i></h2>
-            <div class="tabla">
-                <table cellpadding="0" cellspacing="0">
-                    <tr class="negrita">
-                        <th>Course</th>
-                        <th>Income</th>
-                        <th>Time</th>
-                    </tr>
-                    <tr>
-                        <th>Basic Python for Beginner</th>
-                        <th>$30</th>
-                        <th>Desember 07, 2019 - 10:19 AM</th>
-                    </tr>
-                    <tr>
-                        <th>Learn TypeScript with Real Project</th>
-                        <th>$43</th>
-                        <th>Desember 07, 2019 - 09:47 AM</th>
-                    </tr>
-                    <tr>
-                        <th>Laravel Advance Courses: Build Real Project</th>
-                        <th>$15</th>
-                        <th>Desember 07, 2019 - 06:00 AM</th>
-                    </tr>
-
-                </table>
-            </div>
-            <h2>Course Income<i class="fas fa-arrow-down"></i></h2>
-            <div class="chartContainer">      
-    <!-- Chart -->
-
-    <div class="verticalChart">
-
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 70%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">70%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">May</div>
-      
-        </div>
-      
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 50%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">50%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">June</div>
-      
-        </div>
-      
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 47%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">47%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">July</div>
-      
-        </div>
-      
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 39%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">39%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">August</div>
-      
-        </div>
-      
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 37%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">37%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">September</div>
-      
-        </div>
-      
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 36%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">36%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">October</div>
-      
-        </div>
-      
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 45%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">45%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">November</div>
-      
-        </div>
-      
-        <div class="singleBar">
-      
-          <div class="bar">
-      
-            <div class="value" style="height: 24%;">
-              <span style="color: rgb(45, 137, 239); display: inline;">24%</span>
-            </div>
-      
-          </div>
-      
-          <div style="color: rgb(45, 137, 239);" class="title">Desember</div>
-      
-        </div>
-      
-    
-        <div class="clearfix"></div>
-      
-      </div>
-            </div>
+            <h1 style="margin-top: 20px; margin-left: 30px;">List of Course</h1>
+            <table id="kursus" class="content-table">
+                <tr>
+                    <th>No</th>
+                    <th>Courses</th>
+                    <th>Price</th>
+                    <th>Member</th>
+                    <th>Date Created</th>
+                    <th>Last Updated</th>
+                </tr>
+            </table>
+                     
         </main>
         
           
@@ -252,7 +129,20 @@
     </div>
 
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/chart.js"></script>
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost/ez36.github.io/course.json",
+            dataType: "json",
+            success: function(data){
+                $(data.courses).each(function(index,value){
+                    var record = "<tr><td>"+(index+1)+"</td><td>"+value.name+"</td><td>"+value.price+"</td><td>"+value.member+"</td><td>"+value.created_at+"</td><td>"+value.updated_at+"</td></tr>";
+                    $("#kursus").append(record);
+                });
+            }
+        })
+    })
+    </script>
 </body>
 
 </html>

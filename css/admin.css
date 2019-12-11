@@ -127,7 +127,7 @@ header img:hover {
     font-size: 1.3em;
     padding-left: 50px;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-right: 50px;
     text-decoration: underline;
     color: #fcc728;
@@ -319,7 +319,7 @@ hr {
 
 h1 {
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 p {

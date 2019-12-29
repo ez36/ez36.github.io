@@ -56,5 +56,5 @@ var nihlinkgenerate = function(arr, config){
     console.log('NihLink Auto Generate');
 }
 // Example
-nihlinkgenerate(['kangcode.com', 'google.com'], {url: 'https://drive.kangcode.com', page: 'p/since-advent-of-internet-technology.html', keyit: 'AnasRAR', countdown: true})
+nihlinkgenerate(['kangcode.com', 'www.kangcode.com'], {url: 'https://drive.kangcode.com', page: 'p/since-advent-of-internet-technology.html', keyit: 'AnasRAR', countdown: true})
 // ([blacklist domain in array], {config json})
